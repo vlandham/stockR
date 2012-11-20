@@ -73,3 +73,9 @@ dtw(zBAC,zSPY, keep=TRUE)$distance
 dtw(zBAC,zJPM, keep=TRUE)$distance
 plot(dtw(zBAC,zSPY,keep=TRUE,step=rabinerJuangStepPattern(6,"c")), type="twoway",offset=-2)
 plot(dtw(zBAC,zJPM,keep=TRUE,step=rabinerJuangStepPattern(6,"c")), type="twoway",offset=-2)
+
+for(i in 1:length(tickers)) {
+  ticker <- tickers[i]
+  filename <- paste(ticker,".zoo",sep="")
+  write.zoo(as.zoo(get(ticker)), file = filename)
+}
