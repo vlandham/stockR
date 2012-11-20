@@ -76,6 +76,7 @@ plot(dtw(zBAC,zJPM,keep=TRUE,step=rabinerJuangStepPattern(6,"c")), type="twoway"
 
 for(i in 1:length(tickers)) {
   ticker <- tickers[i]
-  filename <- paste(ticker,".zoo",sep="")
+  filename <- paste(ticker,".zoo.txt",sep="")
   write.zoo(as.zoo(get(ticker)), file = filename)
+  #x <- as.xts(read.zoo(...))
 }
